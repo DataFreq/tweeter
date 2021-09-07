@@ -1,0 +1,19 @@
+header {
+  position: absolute;
+  height: 400px;
+  width: 100%;
+  background-color: #f9a2be;
+  background-image: url("https://i.imgur.com/Ksog5Tc.png");
+}
+
+div.avatar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+h2.name {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
