@@ -25,10 +25,13 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-main {
+main.container {
+  display: flex;
   width: 90%;
   margin: auto;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   padding-top: 400px;
   position: sticky;
 }
