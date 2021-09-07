@@ -1,0 +1,39 @@
+section.new-tweet {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 1em;
+}
+
+section.new-tweet button {
+  display: flex;
+  justify-content: flex-start;
+  color: #ffffff;
+  background-color: #4056A1;
+}
+section.new-tweet output {
+  display: flex;
+  justify-content: flex-end;
+}
+
+section.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+section.new-tweet textarea {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: solid;
+  border-bottom-width: thick;
+  background-color: #f4f1ec;
+  width: 100%;
+}
+
+section.new-tweet > label {
+  display: inline-flex;
+  align-items:center;
+  position: absolute;
+}
