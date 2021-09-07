@@ -1,3 +1,27 @@
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  background-color: #4056A1;
+  height: 120px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+span.arrow {
+  justify-content: center;
+  display: flex;
+  color: crimson;
+}
+
+p.compose {
+  color: #FFFFFF;
+}
+
+span {
+  justify-content: flex-start;
+  color: #ffffff;
+  font-size: 24px;
   font-family: 'Bungee', cursive;
 }
