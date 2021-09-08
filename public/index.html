@@ -23,6 +23,9 @@
     <!-- Form CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <!-- Tweet CSS -->
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -43,7 +46,7 @@
         <span class="arrow"><i class="fas fa-angle-double-down"></i></span>
       </div>
     </nav>
-    <header>
+    <header class="user">
       <div class="avatar">
           <img src="/images/profile-hex.png"> 
       </div>
@@ -63,6 +66,15 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+        <article id="tweet">
+          <header>
+            <img class="tweet-avatar" src="https://i.imgur.com/Nenicaw.png">
+            <p class="name">Mew</p>
+            <p class="username">@mew</p>
+          </header>
+            <p class="tweet-container">Hello world!</p>
+          <footer>1 sec ago</footer>
+        </article>
       </section>
     </main>
   </body>
