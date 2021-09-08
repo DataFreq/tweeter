@@ -1,8 +1,10 @@
 section.new-tweet {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   padding-top: 1em;
+  width: 100%;
 }
 
 section.new-tweet button {
@@ -20,6 +22,7 @@ section.new-tweet div {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
+  width: 100%;
 }
 
 section.new-tweet textarea {
@@ -36,4 +39,8 @@ section.new-tweet > label {
   display: inline-flex;
   align-items:center;
   position: absolute;
+}
+
+section.new-tweet > form {
+  width: 100%;
 }
