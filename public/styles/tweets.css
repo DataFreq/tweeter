@@ -4,6 +4,10 @@ article#tweet {
   border-style: solid;
 }
 
+article#tweet:hover {
+  box-shadow: 5px 5px #c8cae3;
+}
+
 img.tweet-avatar {
   width: 52px;
   height: 52px;
@@ -13,14 +17,15 @@ img.tweet-avatar {
 }
 
 article#tweet > footer {
+  display: flex;
   border-top-style: solid;
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: hidden;
-  width: 100%;
-  padding-bottom: 1.5em;
+  align-items: center;
   padding-left: 1.5em;
-  padding-top: 0.5em;
+  padding-right: 1.5em;
+  width: 100%;
   font-size: 16px;
 }
 
@@ -40,4 +45,16 @@ p.username {
 
 p.tweet-container {
   padding-left: 1.5em;
+}
+
+article#tweet > footer > p {
+  flex-grow: 1;
+}
+
+article#tweet > footer > i {
+  margin: 5px;
+}
+
+article#tweet > footer > i:hover {
+  color: #3895ff;
 }
