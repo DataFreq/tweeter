@@ -49,7 +49,7 @@ p.username {
 }
 
 p.user-tweet {
-  padding-left: 1.5em;
+  margin: 1.5em;
 }
 
 .tweet > footer > p {
