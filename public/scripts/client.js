@@ -42,10 +42,12 @@ $(document).ready(function () {
     const newTweet = $("textarea").serialize();
     const charLength = $("textarea", this).val().length;
     if (!charLength) {
-      alert("[ERR] Textarea empty!");
+      $('.error').slideDown('slow')
+      $('.err-msg').text('Text area empty!')
     }
     if (charLength > 140) {
-      alert("[ERR] Over character limit!");
+      $('.error').slideDown('slow')
+      $('.err-msg').text('Too strong! Over character limit!')
     }
     if (newTweet && charLength <= 140) {
       $.ajax({
@@ -54,6 +56,7 @@ $(document).ready(function () {
         data: newTweet,
       }).done(() => {
         loadTweets();
+        $('.error').slideUp('slow');
         $("textarea", this).val("");
         $("output").val(140);
       });
