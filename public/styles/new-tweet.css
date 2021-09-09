@@ -29,6 +29,7 @@ section.new-tweet textarea {
   border-bottom-style: solid;
   border-bottom-width: thick;
   background-color: #f4f1ec;
+  outline: none;
   width: 100%;
   height: 40px;
 }
