@@ -50,6 +50,7 @@ p.username {
 
 p.user-tweet {
   margin: 1.5em;
+  word-wrap: break-word;
 }
 
 .tweet > footer > p {
