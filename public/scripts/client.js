@@ -3,24 +3,28 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function () {
+$(document).ready(function() {
+  //auto loop of arrow animation
   const arrowAnimation = () => {
     const arrow = $('.arrow');
-    arrow.animate({'margin-top': '0.3em'}, '1000')
+    arrow.animate({'margin-top': '0.3em'}, '1000');
     setTimeout(() => {
-      arrow.animate({'margin-top': '0.5em'}, '1000')
+      arrow.animate({'margin-top': '0.5em'}, '1000');
     }, 1000);
-  }
+  };
   arrowAnimation();
   setInterval(arrowAnimation, 1000);
+  
   $('#toggle-form').click(function() {
-    $('#form').toggle("slide")
+    $('#form').toggle("slide");
   });
+
   const renderTweets = (data) => {
     data.map((tweet) =>
       $("#tweets-container").prepend(createTweetElement(tweet))
     );
   };
+
   const createTweetElement = (data) => {
     const tweetTime = timeago.format(data.created_at);
     const userAvatar = data.user.avatars;
@@ -49,17 +53,18 @@ $(document).ready(function () {
     $tweetData.append($header, $createTweet, $footer);
     return $tweetData;
   };
+  
   $("form").submit((event) => {
     event.preventDefault();
     const newTweet = $("textarea").serialize();
     const charLength = $("textarea", this).val().length;
     if (!charLength) {
-      $('.error').slideDown('slow')
-      $('.err-msg').text('Text area empty!')
+      $('.error').slideDown('slow');
+      $('.err-msg').text('Text area empty!');
     }
     if (charLength > 140) {
-      $('.error').slideDown('slow')
-      $('.err-msg').text('Too strong! Over character limit!')
+      $('.error').slideDown('slow');
+      $('.err-msg').text('Too strong! Over character limit!');
     }
     if (newTweet && charLength <= 140) {
       $.ajax({
@@ -74,6 +79,7 @@ $(document).ready(function () {
       });
     }
   });
+
   const loadTweets = () => {
     $.ajax({
       type: "GET",
