@@ -69,4 +69,9 @@ div.error {
     margin-right: 1.5em;
     margin-bottom: 1.5em;
   }
+
+  section.error {
+    margin-top: 1em;
+    width: 90%;
+  }
 }
