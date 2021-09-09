@@ -57,6 +57,15 @@ div.error {
   color: crimson;
 }
 
+#scroll {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  color: #f9a2be;
+  font-size: 2em;
+}
+
 @media only screen and (min-width: 1024px) {
   body {
     display: flex;
