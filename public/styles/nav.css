@@ -11,15 +11,21 @@ nav {
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
+.arrow-comp {
+  height: 100%;
+}
 
-span.arrow {
+.arrow {
   justify-content: center;
   display: flex;
   color: crimson;
+  padding-top: 0.3em;
 }
 
 p.compose {
   color: #FFFFFF;
+  margin-top: 1.5em;
+  margin-bottom: 0em;
 }
 
 span {

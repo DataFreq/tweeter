@@ -4,6 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
+  const arrowAnimation = () => {
+    const arrow = $('.arrow')
+    arrow.animate({'margin-top': '0.3em'}, '1000')
+    setTimeout(() => {
+      arrow.animate({'margin-top': '0.5em'}, '1000')
+    }, 1000)
+  }
+  arrowAnimation();
+  setInterval(arrowAnimation, 1000);
   const renderTweets = (data) => {
     data.map((tweet) =>
       $("#tweets-container").prepend(createTweetElement(tweet))
