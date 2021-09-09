@@ -15,9 +15,24 @@ $(document).ready(function() {
   arrowAnimation();
   setInterval(arrowAnimation, 1000);
   
+  //toggles textarea and focuses if shown
   $('#toggle-form').click(function() {
     $('#form').toggle("slide");
     $('#tweet-text').focus();
+  });
+
+  //show-hide chevron-up icon
+  $(document).scroll(function() {
+    const y = $(this).scrollTop();
+    if (y > 1) {
+      $('#scroll').fadeIn();
+    } else {
+      $('#scroll').fadeOut();
+    }
+  });
+
+  $('#scroll').click(function() {
+    $("html, body").animate({scrollTop:0},'50');
   });
 
   const renderTweets = (data) => {
@@ -32,6 +47,7 @@ $(document).ready(function() {
     const name = data.user.name;
     const handle = data.user.handle;
     const tweet = data.content.text;
+
     //create header Element
     const $header = $("<header>");
     $header.append(
@@ -39,8 +55,10 @@ $(document).ready(function() {
       $('<p>').addClass("name").text(name),
       $('<p>').addClass("username").text(handle)
     );
+
     //create tweet element
     const $createTweet = $('<p>').addClass("user-tweet").text(tweet);
+
     //create footer element
     const $footer = $("<footer>");
     $footer.append(
@@ -49,6 +67,7 @@ $(document).ready(function() {
       $("<i>").addClass("fas fa-retweet"),
       $("<i>").addClass("fas fa-heart")
     );
+
     //create full tweet element
     const $tweetData = $("<article>").addClass("tweet");
     $tweetData.append($header, $createTweet, $footer);
