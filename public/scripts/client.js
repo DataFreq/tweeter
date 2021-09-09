@@ -49,6 +49,8 @@ $(document).ready(function() {
         data: newTweet,
       }).done(() => {
         loadTweets();
+        $('textarea', this).val('');
+        $('output').val(140);
       })
     };
   });
