@@ -3,13 +3,13 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-$(document).ready(() => {  
-  const renderTweets = data => {
-    data.map(tweet => $('#tweets-container').prepend(createTweetElement(tweet)));
+$(document).ready(function () {
+  const renderTweets = (data) => {
+    data.map((tweet) =>
+      $("#tweets-container").prepend(createTweetElement(tweet))
+    );
   };
-
-  const createTweetElement = data => {
+  const createTweetElement = (data) => {
     const tweetTime = timeago.format(data.created_at);
     const markup = `
       <article class="tweet">
@@ -29,41 +29,36 @@ $(document).ready(() => {
     `;
     return markup;
   };
-  
-  $('form').submit( event => {
+  $("form").submit((event) => {
     event.preventDefault();
-    const newTweet = $('textarea').serialize()
-
-    if (!$('textarea', this).val().length) {
-      return alert("[ERR] Textarea empty!");
-    };
-
-    if (newTweet.length > 140) {
-      return alert("[ERR] Over character limit!");
-    };
-
-    if (newTweet && newTweet.length <= 140) {
+    const newTweet = $("textarea").serialize();
+    const charLength = $("textarea", this).val().length;
+    if (!charLength) {
+      alert("[ERR] Textarea empty!");
+    }
+    if (charLength > 140) {
+      alert("[ERR] Over character limit!");
+    }
+    if (newTweet && charLength <= 140) {
       $.ajax({
-        type: 'POST',
-        url: '/tweets',
+        type: "POST",
+        url: "/tweets",
         data: newTweet,
       }).done(() => {
         loadTweets();
-        $('textarea', this).val('');
-        $('output').val(140);
-      })
-    };
+        $("textarea", this).val("");
+        $("output").val(140);
+      });
+    }
   });
-
   const loadTweets = () => {
     $.ajax({
-      type: 'GET',
-      url: '/tweets',
-      dataType: 'JSON',
-    }).done( data => {
-      renderTweets(data)
+      type: "GET",
+      url: "/tweets",
+      dataType: "JSON",
+    }).done((data) => {
+      renderTweets(data);
     });
   };
-
   loadTweets();
 });
