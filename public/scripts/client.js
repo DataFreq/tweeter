@@ -33,11 +33,24 @@ $(document).ready(function() {
   $('form').submit( event => {
     event.preventDefault();
     const newTweet = $('textarea').serialize()
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: newTweet,
-    })
+
+    if (!$('textarea', this).val().length) {
+      return alert("[ERR] Textarea empty!");
+    };
+
+    if (newTweet.length > 140) {
+      return alert("[ERR] Over character limit!");
+    };
+
+    if (newTweet && newTweet.length <= 140) {
+      $.ajax({
+        type: 'POST',
+        url: '/tweets',
+        data: newTweet,
+      }).done(() => {
+        loadTweets();
+      })
+    };
   });
 
   const loadTweets = () => {
