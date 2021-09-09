@@ -31,7 +31,7 @@ $(document).ready(function() {
   // ];
   
   const renderTweets = data => {
-    data.map(tweet => $('#tweets-container').append(createTweetElement(tweet)));
+    data.map(tweet => $('#tweets-container').prepend(createTweetElement(tweet)));
   };
 
   const createTweetElement = data => {
