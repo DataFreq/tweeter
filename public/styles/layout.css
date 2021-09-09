@@ -29,7 +29,9 @@ main.container {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -53,4 +55,19 @@ div.error {
   width: 90%;
   padding-left: 10%;
   color: crimson;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+
+  main {
+    margin-top: 220px;
+    margin-right: 1.5em;
+    width: 90%;
+    margin-left: auto;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+  }
 }

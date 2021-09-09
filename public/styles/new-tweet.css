@@ -42,3 +42,10 @@ section.new-tweet > label {
 section.new-tweet > form {
   width: 100%;
 }
+
+@media only screen and (min-width: 1024px) {
+  section.new-tweet {
+    display: none;
+    width: 90%;
+  }
+}

@@ -17,3 +17,20 @@ h2.name {
   justify-content: center;
   align-content: center;
 }
+
+@media only screen and (min-width: 1024px) {
+  header.user {
+    margin-top: 240px;
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 50%;
+  }
+
+  div.avatar {
+    padding-top: 25px;
+  }
+
+  h2.name {
+    margin-top: 0px;
+  }
+}
