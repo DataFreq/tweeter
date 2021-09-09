@@ -5,14 +5,17 @@
  */
 $(document).ready(function () {
   const arrowAnimation = () => {
-    const arrow = $('.arrow')
+    const arrow = $('.arrow');
     arrow.animate({'margin-top': '0.3em'}, '1000')
     setTimeout(() => {
       arrow.animate({'margin-top': '0.5em'}, '1000')
-    }, 1000)
+    }, 1000);
   }
   arrowAnimation();
   setInterval(arrowAnimation, 1000);
+  $('#toggle-form').click(function() {
+    $('#form').toggle("slide")
+  });
   const renderTweets = (data) => {
     data.map((tweet) =>
       $("#tweets-container").prepend(createTweetElement(tweet))
