@@ -17,6 +17,7 @@ $(document).ready(function() {
   
   $('#toggle-form').click(function() {
     $('#form').toggle("slide");
+    $('#tweet-text').focus();
   });
 
   const renderTweets = (data) => {
