@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {  
+$(document).ready(() => {  
   const renderTweets = data => {
     data.map(tweet => $('#tweets-container').prepend(createTweetElement(tweet)));
   };
